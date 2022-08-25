@@ -42,3 +42,11 @@ app.post("/user", (req, res) => {
   console.log(req.body.number);
   console.log(req.body.text);
 });
+
+app.get("/question", (req, res) => {
+  models.Product.findAll().then((result) => {
+    res.send({
+      products: result,
+    });
+  });
+});
