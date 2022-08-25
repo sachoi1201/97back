@@ -6,7 +6,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.json());
 
-app.listen(8080, function () {
+const port = process.env.PORT || 8080;
+
+app.listen(port, function () {
   console.log("listening on 8080");
 });
 
