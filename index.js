@@ -23,6 +23,7 @@ app.listen(port, () => {
     });
 });
 app.post("/user", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const number = req.body.number;
   const text = req.body.text;
 
@@ -44,6 +45,7 @@ app.post("/user", (req, res) => {
 });
 
 app.get("/question", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   models.Product.findAll().then((result) => {
     res.send({
       products: result,
